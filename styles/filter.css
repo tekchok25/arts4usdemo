@@ -1,0 +1,258 @@
+.filter-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+}
+
+.filter-sidebar {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 30px;
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+}
+
+.filter-section {
+  margin-bottom: 30px;
+}
+
+.filter-section:last-child {
+  margin-bottom: 0;
+}
+
+.filter-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #755CAD;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+
+.filter-option:hover {
+  color: #755CAD;
+}
+
+.filter-option input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: #755CAD;
+}
+
+.filter-option input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #755CAD;
+}
+
+.filter-option label {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.clear-filters {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: transparent;
+  border: 2px solid #4998BE;
+  color: #4998BE;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.clear-filters:hover {
+  background: #4998BE;
+  color: white;
+}
+
+.events-content {
+  min-height: 500px;
+}
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.events-count {
+  color: #666;
+  font-size: 16px;
+}
+
+.sort-select {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  background: white;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* More precise responsive design */
+@media (min-width: 1400px) {
+  .events-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1399px) {
+  .events-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 700px) and (max-width: 999px) {
+  .events-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 699px) {
+  .events-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+.event-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border-bottom: 4px solid #755CAD;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.event-card.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-details {
+  padding: 20px;
+}
+
+.event-category {
+  display: inline-block;
+  background: #4998BE;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.event-date {
+  color: #755CAD;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.event-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.event-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.event-location {
+  display: flex;
+  align-items: center;
+  color: #999;
+  font-size: 13px;
+}
+
+.event-location::before {
+  content: "📍";
+  margin-right: 5px;
+}
+
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.no-results h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .filter-page-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+  }
+
+  .filter-sidebar {
+      position: static;
+      order: 2;
+  }
+
+  .events-content {
+      order: 1;
+  }
+}
