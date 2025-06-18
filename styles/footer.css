@@ -1,0 +1,134 @@
+.newsletter-section {
+  background-color: white;
+  padding: 70px 0;
+  text-align: center;
+}
+
+.newsletter-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-container h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.newsletter-container p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter-form input:focus {
+  border-color: rgb(117, 92, 173);
+}
+
+.newsletter-form button {
+  padding: 15px 25px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+  background-color: #555;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .newsletter-form {
+      flex-direction: column;
+      max-width: 300px;
+  }
+  
+  .newsletter-container h2 {
+      font-size: 28px;
+  }
+  
+  .newsletter-container p {
+      font-size: 16px;
+  }
+}
+
+.footer {
+  background-color: rgb(117, 92, 173);
+  color: white;
+  padding: 60px 0 20px 0;
+}
+
+.footer-wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 45px;
+}
+
+.footer-section h3 {
+  color: rgb(253, 251, 249);
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.footer-logo {
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  color: rgb(253, 251, 249);
+  margin-bottom: 15px;
+  line-height: 1.6;
+  margin-left: 2px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: rgb(253, 251, 249);
+  transition: text-decoration 0.15s;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}

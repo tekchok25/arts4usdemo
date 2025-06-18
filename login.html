@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arts4Us Login & Sign Up</title>
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/quote.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+    <link rel="stylesheet" href="styles/carousel.css">
+    <link rel="stylesheet" href="styles/login.css">
+  </head>
+  <body>
+
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+      <img src="background/background1.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+    </div>
+
+    <header class="header">
+      <nav class="nav-wrapper">
+        <!-- Logo on the left -->
+        <a href="index.html" class="logo">
+          <img class="logo-img" src="images/logo-colour.png" alt="Arts4us Logo">
+        </a>
+        <!-- Navigation links in the center -->
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="whats-on.html">What's on</a>
+            <a href="resources.html">Resources</a>
+            <a href="blog.html">Blog</a>
+            <a href="youthvoice.html">Youth Voice</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <!-- Icons on the right -->
+          <div class="nav-icons">
+            <a href="login.html" title="Search">
+              <img class="user-icon" src="icons/user-icon.png">
+            </a>
+           </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="login-wrapper">
+      <div class="auth-container" id="authContainer">
+        <!-- Header -->
+        <div class="auth-header">
+          <h2 id="authTitle">Welcome Back</h2>
+          <p id="authSubtitle">Sign in to your account to continue</p>
+        </div>
+        
+        <!-- Form -->
+        <form class="auth-form" id="authForm">
+          <!-- Name field - only for signup -->
+          <div class="form-group signup-only">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name">
+          </div>
+            
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+            
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+            
+          <button type="submit" class="auth-button" id="authSubmitBtn">Sign In</button>
+        </form>
+        
+        <!-- Forgot password - only for login -->
+        <div class="forgot-link login-only">
+            <a href="#">Forgot your password?</a>
+        </div>
+        
+        <!-- Terms - only for signup -->
+        <div class="terms-text signup-only">
+          By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+      </div>
+        
+        <!-- Toggle Section -->
+        <div class="toggle-section">
+          <p class="toggle-text" id="toggleText">Don't have an account?</p>
+          <button type="button" class="toggle-button" id="toggleBtn">Create Account</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const authContainer = document.getElementById('authContainer');
+      const authTitle = document.getElementById('authTitle');
+      const authSubtitle = document.getElementById('authSubtitle');
+      const authSubmitBtn = document.getElementById('authSubmitBtn');
+      const toggleText = document.getElementById('toggleText');
+      const toggleBtn = document.getElementById('toggleBtn');
+      const nameInput = document.getElementById('name');
+
+      let isSignupMode = false;
+
+      function toggleMode() {
+        isSignupMode = !isSignupMode;
+          
+        if (isSignupMode) {
+          // Switch to signup mode
+          authContainer.classList.add('signup-mode');
+          authTitle.textContent = 'Create Account';
+          authSubtitle.textContent = 'Join us today and get started';
+          authSubmitBtn.textContent = 'Create Account';
+          toggleText.textContent = 'Already have an account?';
+          toggleBtn.textContent = 'Sign In';
+          nameInput.required = true;
+        } else {
+          // Switch to login mode
+          authContainer.classList.remove('signup-mode');
+          authTitle.textContent = 'Welcome Back';
+          authSubtitle.textContent = 'Sign in to your account to continue';
+          authSubmitBtn.textContent = 'Sign In';
+          toggleText.textContent = "Don't have an account?";
+          toggleBtn.textContent = 'Create Account';
+          nameInput.required = false;
+          nameInput.value = '';
+        }
+      }
+
+      toggleBtn.addEventListener('click', toggleMode);
+
+      // Form submission handler
+      document.getElementById('authForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+          
+        if (isSignupMode) {
+          console.log('Creating account...');
+          // Handle signup logic here
+        } else {
+          console.log('Signing in...');
+          // Handle login logic here
+        }
+      });
+    </script>
+
+
+    <!-- Footer section -->    
+    <footer class="footer">
+      <div class="footer-wrapper">
+        <div class="footer-content">
+          <!-- Logo section -->
+          <div class="footer-section">
+            <img class="footer-logo" src="images/logo-white.png">
+            <p>Working together to scale up place-based arts initiatives that support the mental health of children and young people.</p>
+          </div>
+
+          <!-- General section -->
+          <div class="footer-section">
+            <h3>General</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="youthvoice.html">Youth Voice</a></li>              
+              <li><a href="#">Partners</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="#">Meet the Team</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources section -->
+          <div class="footer-section">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="whats-on.html">Activities</a></li>
+              <li><a href="#">Parents</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="#">Creative Corner</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact section -->
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>St Helens Road</li>
+              <li>Ormskirk</li>
+              <li>Lancashire</li>
+              <li>L39 4QP</li>
+              <li>United Kingdom</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  </body>
+</html>

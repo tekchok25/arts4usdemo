@@ -1,0 +1,105 @@
+.header {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.nav-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color, color 0.15s;
+  padding: 10px 15px;
+}
+
+.nav-links a:hover {
+  background-color: rgb(117, 92, 173);
+  color: white;
+}
+
+.nav-links a:active {
+  background-color: rgb(159, 120, 197);
+  color: white;
+}
+
+.a-active {
+  background-color: rgb(159, 120, 197);
+  color: white !important;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  height: 32px;
+  width: 32px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: opacity 0.15s;
+}
+
+.user-icon:hover {
+  opacity: 0.5;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.content {
+  background-color: white;
+  padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+  .nav-wrapper {
+      padding: 0 15px;
+  }
+  
+  .nav-links {
+      gap: 1px;
+  }
+  
+  .nav-links a {
+      font-size: 14px;
+  }
+}

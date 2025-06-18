@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arts4Us</title>
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/quote.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+    <link rel="stylesheet" href="styles/carousel.css">
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav-wrapper">
+        <!-- Logo on the left -->
+        <a href="index.html" class="logo">
+          <img class="logo-img" src="images/logo-colour.png" alt="Arts4us Logo">
+        </a>
+        <!-- Navigation links in the center -->
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="whats-on.html">What's on</a>
+            <a href="resources.html">Resources</a>
+            <a href="blog.html">Blog</a>
+            <a href="youthvoice.html">Youth Voice</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <!-- Icons on the right -->
+          <div class="nav-icons">
+            <a href="login.html" title="Search">
+              <img class="user-icon" src="icons/user-icon.png">
+            </a>
+           </div>
+        </div>
+      </nav>
+    </header>
+
+     <!-- All the content goes here -->
+    <main>
+      <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; z-index: -1;">
+        <img src="background/background1.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+      </div>
+
+      <section class="carousel-section">
+        <div class="carousel-container">
+          <!-- Slide 1 -->
+          <div class="carousel-slide active">
+            <img src="images/event-1.jpg" alt="Event 1">
+            <div class="carousel-overlay">
+              <div class="carousel-content">
+                <h2 class="carousel-title">Arts4Us End of Year Event</h2>
+                <p class="carousel-description">Join us for an inspiring day of ideas, creativity, and collaboration as we share key findings and reflections from the first year of our research into a new digital platform supporting children's mental health through the arts.</p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <img src="images/event-2.webp" alt="Event 2">
+            <div class="carousel-overlay">
+              <div class="carousel-content">
+                <h2 class="carousel-title">Kart & Cruise Championship</h2>
+                <p class="carousel-description">Team Mario Kart Championship is here! Bring some food to share. Let us know if you're able to join us!</p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Slide 3 -->
+          <div class="carousel-slide">
+            <img src="images/event-3.webp" alt="Event 3">
+            <div class="carousel-overlay">
+              <div class="carousel-content">
+                <h2 class="carousel-title">Creative Careers in the Spotlight</h2>
+                <p class="carousel-description">HOME are inviting students from Years 9-13 across GM to learn about pursuing creative careers across Theatre, Film and/or Visual Art.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Dots Indicator -->
+        <div class="carousel-dots">
+          <button class="carousel-dot active" onclick="currentSlide(1)"></button>
+          <button class="carousel-dot" onclick="currentSlide(2)"></button>
+          <button class="carousel-dot" onclick="currentSlide(3)"></button>
+        </div>
+      </section>
+      
+      <section class="events-section">
+        <div class="section-title">
+          <h1 class="title">Upcoming Events</h1>
+          <button class="events-more">View More ></button>
+        </div>
+
+        <div class="events-grid">
+          <div class="event-card">
+            <div class="event-img">
+              <a href="https://www.edgehill.ac.uk/event/arts4us-event/" target="_blank">
+                <img src="images/gallery-1.jpg" alt="Community Workshop">
+              </a>
+            </div>
+            <div class="event-content">
+              <div class="event-date">Sat 28 June 2025</div>
+              <h3 class="event-title">Arts4Us End of Year Event</h3>
+              <p class="event-description">Join our end of year event at Edge Hill University and celebrate our achievements!
+              </p>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="event-img">
+              <img src="images/event-2.webp" alt="Kart-and-Cruise">
+            </div>
+            <div class="event-content">
+              <div class="event-date">Wed 16 July 2025</div>
+              <h3 class="event-title">Arts4Us Mario Kart & Cuisine Championship</h3>
+              <p class="event-description">Team Mario Kart Championship is here! Bring some food to share. Let us know if you're able to join us!
+              </p>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="event-img">
+              <img src="images/event-3.webp" alt="Kart-and-Cruise">
+            </div>
+            <div class="event-content">
+              <div class="event-date">1 Sep 24 - 31 Jul 25</div>
+              <h3 class="event-title">Creative Careers in the Spotlight</h3>
+              <p class="event-description">HOME are inviting students from Years 9-13 across GM to learn about pursuing creative careers across Theatre, Film and/or Visual Art.
+              </p>
+            </div>
+          </div>
+
+          
+        </div>
+      </section>
+      
+      <!-- GALLERY SECTION -->
+      <section class="gallery-section">
+        <div class="section-title">
+          <h1 class="title">Gallery</h1>
+          <button class="gallery-more">View More ></button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="images/gallery-13.jpg" alt="Gallery Image 1">
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-9.jpg" alt="Gallery Image 2">
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-8.jpg" alt="Gallery Image 3">
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-7.jpg" alt="Gallery Image 4">
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-6.jpg" alt="Gallery Image 5">
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-5.jpg" alt="Gallery Image 6">
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-4.png" alt="Gallery Image 7">
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-3.jpg" alt="Gallery Image 8">
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery-11.jpg" alt="Gallery Image 9">
+          </div>
+        </div>
+      </section>
+
+      <section class="simple-quote-section">
+        <div class="simple-quote-container">
+          <div class="quote-mark">"</div>
+          
+          <blockquote class="quote-text">
+            The best way to predict the future is to create it. We're not waiting for change—we're making it happen.
+          </blockquote>
+          
+          <cite class="quote-author">Name Surname, Young Arts4Us</cite>
+        </div>
+      </section>
+
+      <hr>
+      <section class="newsletter-section">
+        <div class="newsletter-container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest news and events</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- Footer section -->    
+    <footer class="footer">
+      <div class="footer-wrapper">
+        <div class="footer-content">
+          <!-- Logo section -->
+          <div class="footer-section">
+            <img class="footer-logo" src="images/logo-white.png">
+            <p>Working together to scale up place-based arts initiatives that support the mental health of children and young people.</p>
+          </div>
+
+          <!-- General section -->
+          <div class="footer-section">
+            <h3>General</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Youth Voice</a></li>              
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Meet the Team</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources section -->
+          <div class="footer-section">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Resources</a></li>
+              <li><a href="#">Activities</a></li>
+              <li><a href="#">Parents</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Creative Corner</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact section -->
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>St Helens Road</li>
+              <li>Ormskirk</li>
+              <li>Lancashire</li>
+              <li>L39 4QP</li>
+              <li>United Kingdom</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

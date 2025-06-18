@@ -1,0 +1,154 @@
+/* Carousel Section */
+.carousel-section {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: slideShow 15s infinite;
+}
+
+.carousel-slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.carousel-slide:nth-child(2) {
+  animation-delay: 5s;
+}
+
+.carousel-slide:nth-child(3) {
+  animation-delay: 10s;
+}
+
+@keyframes slideShow {
+  0% { opacity: 0; }
+  6.67% { opacity: 1; }
+  33.33% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay */
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.carousel-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 30px 20px;
+  text-align: left;
+  color: white;
+}
+
+.carousel-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.carousel-description {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 800px;
+}
+
+/* Dots Indicator */
+.carousel-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.5);
+  animation: dotAnimation 15s infinite;
+}
+
+.carousel-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.carousel-dot:nth-child(2) {
+  animation-delay: 5s;
+}
+
+.carousel-dot:nth-child(3) {
+  animation-delay: 10s;
+}
+
+@keyframes dotAnimation {
+  0% { background: white; }
+  6.67% { background: white; }
+  33.33% { background: white; }
+  40% { background: rgba(255,255,255,0.5); }
+  100% { background: rgba(255,255,255,0.5); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-section {
+    height: 500px;
+  }
+  
+  .carousel-title {
+    font-size: 36px;
+  }
+  
+  .carousel-description {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-section {
+    height: 400px;
+  }
+  
+  .carousel-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .carousel-description {
+    font-size: 16px;
+  }
+  
+  .carousel-content {
+    padding: 0 15px;
+  }
+}

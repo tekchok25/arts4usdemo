@@ -1,0 +1,68 @@
+/* Simple Quote Section */
+.simple-quote-section {
+  padding: 60px 0;
+}
+
+.simple-quote-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.quote-mark {
+  font-size: 60px;
+  color: rgb(117, 92, 173);
+  font-family: Georgia, serif;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.quote-text {
+  font-size: 32px;
+  font-weight: 300;
+  color: #333;
+  line-height: 1.4;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.quote-author {
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+}
+
+.quote-author::before {
+  content: "— ";
+  color: rgb(117, 92, 173);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .simple-quote-section {
+    padding: 80px 0;
+  }
+  
+  .quote-mark {
+    font-size: 48px;
+  }
+  
+  .quote-text {
+    font-size: 24px;
+  }
+  
+  .quote-author {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .simple-quote-section {
+    padding: 60px 0;
+  }
+  
+  .quote-text {
+    font-size: 20px;
+  }
+}

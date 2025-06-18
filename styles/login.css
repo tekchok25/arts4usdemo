@@ -1,0 +1,202 @@
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.auth-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 450px;
+  width: 100%;
+  padding: 60px 50px;
+  text-align: center;
+}
+
+.auth-header h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.auth-header p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group.signup-only {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: rgb(117, 92, 173);
+}
+
+.auth-button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  background-color: rgb(117, 92, 173);
+  color: white;
+}
+
+.auth-button:hover {
+  background-color: rgb(95, 73, 143);
+}
+
+.forgot-link {
+  margin-top: 15px;
+}
+
+.forgot-link a {
+  color: rgb(117, 92, 173);
+  text-decoration: none;
+  font-size: 14px;
+  transition: text-decoration 0.15s;
+}
+
+.forgot-link a:hover {
+  text-decoration: underline;
+}
+
+.toggle-section {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #eee;
+}
+
+.toggle-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.toggle-button {
+  background: none;
+  border: 2px solid rgb(73, 152, 190);
+  color: rgb(73, 152, 190);
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: rgb(73, 152, 190);
+  color: white;
+}
+
+.terms-text {
+  font-size: 12px;
+  color: #666;
+  margin-top: 20px;
+  line-height: 1.4;
+  text-align: center;
+  display: flex;
+}
+
+.terms-text a {
+  color: rgb(73, 152, 190);
+  text-decoration: none;
+  display: inline;
+} 
+
+.terms-text a:hover {
+  text-decoration: underline;
+}
+
+.terms-text .terms-link,
+.terms-text .privacy-link {
+    color: rgb(73, 152, 190);
+    font-weight: 600;
+}
+
+/* Hide/show elements based on mode */
+.signup-only {
+  display: none !important;
+}
+
+.auth-container.signup-mode .signup-only {
+  display: block !important;
+}
+
+.auth-container.signup-mode .form-group.signup-only {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.auth-container.signup-mode .login-only {
+  display: none !important;
+}
+
+/* Animation for smooth transitions */
+.form-group {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .auth-container {
+      padding: 40px 30px;
+      margin: 10px;
+  }
+
+  .auth-header h2 {
+      font-size: 28px;
+  }
+
+  .form-group input {
+      padding: 12px 15px;
+      font-size: 14px;
+  }
+
+  .auth-button {
+      padding: 12px 20px;
+      font-size: 14px;
+  }
+}
