@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/quote.css">
     <link rel="stylesheet" href="styles/gallery.css">
     <link rel="stylesheet" href="styles/carousel.css">
+    <link rel="stylesheet" href="styles/resource.css">
   </head>
   <body>
     <header class="header">
@@ -37,9 +38,164 @@
       </nav>
     </header>
 
-    <div class="content-wrapper">
-      <h1>This is Resource</h1>
+    <section class="hero-section">
+      <div class="hero-image">
+        <img src="events/event-8.jpg" alt="Arts4Us Hero Image">
+      </div>
+      <div class="hero-overlay">
+        <div class="hero-overlay-content">
+          <h1>Resources</h1>
+          <p>Discover tools, guides, and materials to support young people's mental health through creative arts initiatives</p>
+        </div>
+      </div>
+    </section>
+
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; z-index: -1;">
+      <img src="background/background1.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
     </div>
+
+    <div class="content-wrapper">
+      <div class="resources-grid">
+        <!-- For Young People -->
+        <div class="resource-card">
+          <h3>
+            <div class="resource-icon">Y</div>
+            For Young People
+          </h3>
+          <p>Creative activities, self-expression tools, and mental health resources designed specifically for ages 9-13.</p>
+          <ul class="resource-links">
+            <li><a href="#">> Creative Expression Toolkit</a></li>
+            <li><a href="#">> Mindfulness Through Art Activities</a></li>
+            <li><a href="#">> Feeling Journal Templates</a></li>
+            <li><a href="#">> Peer Support Guidelines</a></li>
+            <li><a href="#">> Online Safety for Young Artists</a></li>
+          </ul>
+        </div>
+
+        <!-- For Parents & Caregivers -->
+        <div class="resource-card">
+          <h3>
+            <div class="resource-icon">P</div>
+            For Parents & Caregivers
+          </h3>
+          <p>Guidance and support materials to help families engage with arts-based mental health initiatives.</p>
+          <ul class="resource-links">
+            <li><a href="#">> Supporting Your Child's Creative Journey</a></li>
+            <li><a href="#">> Recognizing Mental Health Signs</a></li>
+            <li><a href="#">> Art Activities for Home</a></li>
+            <li><a href="#">> Communication Guides</a></li>
+            <li><a href="#">> Local Support Services Directory</a></li>
+          </ul>
+        </div>
+
+        <!-- For Educators & Practitioners -->
+        <div class="resource-card">
+          <h3>
+            <div class="resource-icon">E</div>
+            For Educators & Practitioners
+          </h3>
+          <p>Professional development resources and evidence-based practices for implementing arts-based mental health support.</p>
+          <ul class="resource-links">
+            <li><a href="#">> Best Practice Guidelines</a></li>
+            <li><a href="#">> Training Modules</a></li>
+            <li><a href="#">> Evaluation Frameworks</a></li>
+            <li><a href="#">> Case Study Examples</a></li>
+            <li><a href="#">> Research Publications</a></li>
+          </ul>
+        </div>
+
+        <!-- Digital Platform -->
+        <div class="resource-card">
+          <h3>
+            <div class="resource-icon">D</div>
+            Digital Platform
+          </h3>
+          <p>Access our innovative digital platform connecting young people with local arts initiatives and mental health support.</p>
+          <ul class="resource-links">
+            <li><a href="#">> Platform User Guide</a></li>
+            <li><a href="#">> Activity Finder Tool</a></li>
+            <li><a href="#">> Digital Wellbeing Resources</a></li>
+            <li><a href="#">> Virtual Workshop Library</a></li>
+            <li><a href="#">> Community Connection Hub</a></li>
+          </ul>
+        </div>
+
+        <!-- Research & Evidence -->
+        <div class="resource-card">
+          <h3>
+            <div class="resource-icon">R</div>
+            Research & Evidence
+          </h3>
+          <p>Academic research, evaluation reports, and evidence base supporting arts initiatives for young people's mental health.</p>
+          <ul class="resource-links">
+            <li><a href="#">> Project Reports</a></li>
+            <li><a href="#">> Academic Publications</a></li>
+            <li><a href="#">> Impact Measurements</a></li>
+            <li><a href="#">> Literature Reviews</a></li>
+            <li><a href="#">> Conference Presentations</a></li>
+          </ul>
+        </div>
+
+        <!-- Community Resources -->
+        <div class="resource-card">
+          <h3>
+            <div class="resource-icon">C</div>
+            Community Resources
+          </h3>
+          <p>Connect with local organizations, services, and community initiatives supporting young people's wellbeing.</p>
+          <ul class="resource-links">
+            <li><a href="#">> Partner Organizations</a></li>
+            <li><a href="#">> Local Arts Groups</a></li>
+            <li><a href="#">> Mental Health Services</a></li>
+            <li><a href="#">> Volunteer Opportunities</a></li>
+            <li><a href="#">> Funding Information</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Coming Soon Section -->
+      <!--
+      <div class="coming-soon">
+        <h2> More Resources Coming Soon!</h2>
+        <p>We're continuously developing new materials and tools.</p>
+        <p>Check back regularly for updates, or subscribe to our newsletter to be notified of new resources.</p>
+      </div>
+    </div> -->
+
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+      <h2>Help Us Improve Our Resources</h2>
+      <p>Your feedback helps us create better resources for young people, families, and communities.</p>
+      
+      <form class="feedback-form">
+        <h2>Resource Feedback</h2>
+        
+        <div class="form-group">
+          <label for="resource-type">I am a:</label>
+          <select id="resource-type" name="resource-type">
+            <option value="">Select your role</option>
+            <option value="young-person">Young Person (9-13)</option>
+            <option value="parent">Parent/Caregiver</option>
+            <option value="educator">Educator/Teacher</option>
+            <option value="practitioner">Arts Practitioner</option>
+            <option value="researcher">Researcher</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="feedback">What resources would be most helpful to you?</label>
+          <textarea id="feedback" name="feedback" placeholder="Tell us what resources you need or would like to see..."></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email (optional - for follow-up)</label>
+          <input type="email" id="email" name="email" placeholder="your.email@example.com">
+        </div>
+        
+        <button type="submit" class="submit-btn">Submit Feedback</button>
+      </form>
+    </section>
 
     <!-- Footer section -->    
     <footer class="footer">

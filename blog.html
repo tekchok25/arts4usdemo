@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/quote.css">
     <link rel="stylesheet" href="styles/gallery.css">
     <link rel="stylesheet" href="styles/carousel.css">
+    <link rel="stylesheet" href="styles/blog.css">
   </head>
   <body>
     <header class="header">
@@ -37,9 +38,152 @@
       </nav>
     </header>
 
-    <div class="content-wrapper">
-      <h1>This is Blog</h1>
+    <section class="hero-section">
+      <div class="hero-image">
+        <img src="events/event-2.jpg" alt="Arts4Us Hero Image">
+      </div>
+      <div class="hero-overlay">
+        <div class="hero-overlay-content">
+          <h1>Our Blog</h1>
+          <p>Discover insights, stories, and updates from our community of young people, researchers, and creative practitioners working together to support mental health through the arts.</p>
+        </div>
+      </div>
+    </section>
+
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; z-index: -1;">
+      <img src="background/background1.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
     </div>
+
+    <div class="blog-section">
+      <!-- Blog Filters -->
+      <div class="blog-filters">
+        <button class="filter-btn active" data-filter="all">All Posts</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+        <button class="filter-btn" data-filter="community">Community</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+        <button class="filter-btn" data-filter="insights">Youth Insights</button>
+        <button class="filter-btn" data-filter="news">News</button>
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="blog-grid">
+        <!-- Featured Post -->
+        <article class="blog-card featured-post">
+          <div class="featured-image">
+            <img src="images/gallery-1.jpg" alt="Featured post">
+          </div>
+          <div class="featured-content">
+            <span class="featured-tag">Featured</span>
+            <h2 class="featured-title">Building Bridges: How Arts4Us is Transforming Mental Health Support</h2>
+            <p class="featured-excerpt">An in-depth look at our latest research findings and how place-based arts initiatives are making a real difference in the lives of young people across the Northwest.</p>
+            <a href="#" class="read-more">Read Full Article →</a>
+          </div>
+        </article>
+
+        <!-- Regular Blog Posts -->
+        <article class="blog-card research">
+          <div class="blog-image">
+            <img src="images/gallery-9.jpg" alt="Research update">
+            <span class="blog-category research">Research</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">📅 June 20, 2025</span>
+              <span class="blog-author">👤 Dr. Robyn Dowlen</span>
+            </div>
+            <h3 class="blog-card-title">Latest Research Findings: Arts and Mental Health</h3>
+            <p class="blog-excerpt">Our latest study reveals significant improvements in wellbeing among young people participating in community arts programs...</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card community">
+          <div class="blog-image">
+            <img src="images/gallery-8.jpg" alt="Community story">
+            <span class="blog-category community">Community</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">📅 June 18, 2025</span>
+              <span class="blog-author">👤 Saz Domville</span>
+            </div>
+            <h3 class="blog-card-title">Community Spotlight: Arts Collective</h3>
+            <p class="blog-excerpt">Meet the incredible team at Arts Collective with our CHA and discover how they're using creativity to support local young people...</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card events">
+          <div class="blog-image">
+            <img src="images/event-1.jpg" alt="Event recap">
+            <span class="blog-category events">Events</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">📅 June 15, 2025</span>
+              <span class="blog-author">👤 Rebecca Clark</span>
+            </div>
+            <h3 class="blog-card-title">Save the date! Arts4Us End of Year Celebration</h3>
+            <p class="blog-excerpt">Join for an incredible day! Here's everything that will happen at our end of year event, from inspiring talks to creative workshops...</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card insights">
+          <div class="blog-image">
+            <img src="images/gallery-7.jpg" alt="Youth insights">
+            <span class="blog-category insights">Youth Insights</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">📅 June 12, 2025</span>
+              <span class="blog-author">👤 Youth Advisory Panel</span>
+            </div>
+            <h3 class="blog-card-title">Young Voices: What Mental Health Support Really Means</h3>
+            <p class="blog-excerpt">Our youth co-researchers share their perspectives on mental health, creativity, and what truly makes a difference in their lives...</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card news">
+          <div class="blog-image">
+            <img src="images/vicky-1.jpeg" alt="News update">
+            <span class="blog-category news">News</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">📅 June 10, 2025</span>
+              <span class="blog-author">👤 Professor Vicky Karkou</span>
+            </div>
+            <h3 class="blog-card-title">Roundtable on Children and Young People's Mental Health</h3>
+            <p class="blog-excerpt">We're honoured to be part of this vital conversation and to help shape a future where creative and cultural opportunities are central to mental health care....</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card research">
+          <div class="blog-image">
+            <img src="images/gallery-5.jpg" alt="Research methodology">
+            <span class="blog-category research">Research</span>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-date">📅 June 8, 2025</span>
+              <span class="blog-author">👤 Dr. Shaun Liverpool</span>
+            </div>
+            <h3 class="blog-card-title">Co-Research with Young People: Our Methodology</h3>
+            <p class="blog-excerpt">Learn about our innovative approach to involving young people as co-researchers and how this shapes our understanding...</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Load More Button -->
+      <div class="load-more">
+        <button class="load-more-btn">Load More Posts</button>
+      </div>
+    </div>
+
 
     <!-- Footer section -->    
     <footer class="footer">
