@@ -37,9 +37,229 @@
       </nav>
     </header>
 
-    <div class="content-wrapper">
-      <h1>This is Gallery Page</h1>
+    <section class="hero-section">
+      <div class="hero-image">
+        <img src="events/event-7.jpg" alt="Arts4Us Hero Image">
+      </div>
+      <div class="hero-overlay">
+        <div class="hero-overlay-content">
+          <h1>Our Gallery</h1>
+          <p>Capturing moments of creativity, collaboration, and discovery as we work together to support youth mental health through the arts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="gallery-filters">
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="workshops">Workshops</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+        <button class="filter-btn" data-filter="community">Community</button>
+      </div>
+    </section>
+
+    <!-- Main Gallery -->
+    <section class="main-gallery">
+      <div class="gallery-container">
+        <div class="masonry-grid" id="galleryGrid">
+          <!-- Gallery items will be populated here -->
+          <div class="gallery-item" data-category="workshops">
+            <img src="images/gallery-1.jpg" alt="Creative Workshop">
+            <div class="gallery-overlay">
+              <h3>Creative Expression Workshop</h3>
+              <p>Young people exploring emotions through visual arts</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="workshop">
+            <img src="images/gallery-2.jpg" alt="Community Event">
+            <div class="gallery-overlay">
+              <h3>Music & Movement Session</h3>
+              <p>Combining creativity with physical wellbeing</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="events">
+            <img src="images/gallery-3.jpg" alt="Dance">
+            <div class="gallery-overlay">
+              <h3>Community Dance Workshop</h3>
+              <p>Young people joining the dance workshop</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="events">
+            <img src="images/gallery-4.png" alt="Music Workshop">
+            <div class="gallery-overlay">
+              <h3>Community Arts Festival</h3>
+              <p>Celebrating creativity and mental health awareness</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="community">
+            <img src="images/gallery-5.jpg" alt="Community Collaboration">
+            <div class="gallery-overlay">
+              <h3>Community Partnership</h3>
+              <p>Working with local organizations and perform</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="events">
+            <img src="images/gallery-6.jpg" alt="Arts Showcase">
+            <div class="gallery-overlay">
+              <h3>Youth Arts Showcase</h3>
+              <p>Displaying creative works by young people</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="research">
+            <img src="images/gallery-7.jpg" alt="Drama Workshop">
+            <div class="gallery-overlay">
+              <h3>Research Planning Session</h3>
+              <p>Designing studies with youth input</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="research">
+            <img src="images/gallery-8.jpg" alt="Research Planning">
+            <div class="gallery-overlay">
+              <h3>Research Planning Session</h3>
+              <p>Designing studies with youth input</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="community">
+            <img src="images/gallery-9.jpg" alt="Youth Drama">
+            <div class="gallery-overlay">
+              <h3>Drama & Story Telling</h3>
+              <p>A day of pure creation and story telling</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="events">
+            <img src="images/gallery-11.jpg" alt="Team Meeting">
+            <div class="gallery-overlay">
+              <h3>Team Collaboration</h3>
+              <p>Academic and community partners working together</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="workshops">
+            <img src="events/event-1.jpeg" alt="Family Engagement">
+            <div class="gallery-overlay">
+              <h3>Family Engagement Day - KWoA</h3>
+              <p>Expressing thoughts and feelings with family</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="community">
+            <img src="events/event-2.jpg" alt="Liverpool Lighthouse">
+            <div class="gallery-overlay">
+              <h3>Education in Mind Conference</h3>
+              <p>Liverpool Lighthouse</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="community">
+            <img src="events/event-3.jpg" alt="Liverpool Lighthouse">
+            <div class="gallery-overlay">
+              <h3>Education in Mind Conferenc</h3>
+              <p>Liverpool Lighthouse</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="community">
+            <img src="events/event-4.jpg" alt="Liverpool Lighthouse">
+            <div class="gallery-overlay">
+              <h3>Representations Conference</h3>
+              <p>Liverpool Lighthouse</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="community">
+            <img src="events/event-5.jpg" alt="Poetry Kids">
+            <div class="gallery-overlay">
+              <h3>Poetry Kids</h3>
+              <p>Poetry Society</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="community">
+            <img src="events/event-6.jpg" alt="End of Year Event">
+            <div class="gallery-overlay">
+              <h3> Creative Writing Workshop</h3>
+              <p>Express feelings and thoughts in words</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="community">
+            <img src="events/event-7.jpg" alt="End of Year Event">
+            <div class="gallery-overlay">
+              <h3>Creative Writing</h3>
+              <p>Poetry Society</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="community">
+            <img src="events/event-8.jpg" alt="End of Year Event">
+            <div class="gallery-overlay">
+              <h3>Digital Exploration Festival</h3>
+              <p>The moment where virtual blends with reality</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="community">
+            <img src="events/event-9.jpg" alt="Digital Exploration">
+            <div class="gallery-overlay">
+              <h3>Online Mindfulness Arts</h3>
+              <p>Find the peace on your spot</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Highlights -->
+    <section class="featured-section">
+      <div class="featured-content">
+        <h2 style="color: white; font-size: 36px; margin-bottom: 20px;">Featured Highlights</h2>
+        <p style="font-size: 18px; opacity: 0.9;">Special moments that capture the essence of Arts4Us</p>
+        
+        <div class="featured-grid">
+          <div class="featured-item">
+            <h3>Workshop Series</h3>
+            <p>Our workshops brought together young people from across the Northwest to explore how arts activities can support mental health and wellbeing.</p>
+          </div>
+          
+          <div class="featured-item">
+            <h3>Community Partnerships</h3>
+            <p>Building strong relationships with local organisations, schools, and health services to create sustainable support networks for young people.</p>
+          </div>
+          
+          <div class="featured-item">
+            <h3>Research in Action</h3>
+            <p>Young co-researchers leading sessions, gathering data, and contributing their unique perspectives to our understanding of arts-based mental health support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Load More Section -->
+    <section class="load-more-section">
+      <h3 style="color: #333; margin-bottom: 20px;">Want to see more?</h3>
+      <p style="color: #666; margin-bottom: 30px;">We're constantly documenting our journey. Check back regularly for new photos and updates.</p>
+      <button class="load-more-btn" onclick="loadMoreImages()">Load More Photos</button>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img src="" alt="" id="lightboxImage">
+      </div>
     </div>
+
 
     <!-- Footer section -->    
     <footer class="footer">
@@ -90,5 +310,153 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // Masonry layout function
+      function initMasonry() {
+        const grid = document.getElementById('galleryGrid');
+        const items = Array.from(grid.querySelectorAll('.gallery-item'));
+        const columnCount = getColumnCount();
+        
+        // Reset positions
+        grid.style.position = 'relative';
+        items.forEach(item => {
+          item.style.position = 'absolute';
+          item.style.width = `calc(${100/columnCount}% - 20px)`;
+          item.style.margin = '10px';
+        });
+        
+        // Wait for images to load, then position
+        Promise.all(items.map(item => {
+          const img = item.querySelector('img');
+          return new Promise(resolve => {
+            if (img.complete) {
+              resolve();
+            } else {
+              img.onload = resolve;
+              img.onerror = resolve;
+            }
+          });
+        })).then(() => {
+          positionItems(items, columnCount);
+        });
+      }
+      
+      function positionItems(items, columnCount) {
+        const columnHeights = new Array(columnCount).fill(0);
+        const grid = document.getElementById('galleryGrid');
+        
+        items.forEach((item, index) => {
+          // Find shortest column
+          const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+          
+          // Get image to determine container height
+          const img = item.querySelector('img');
+          const containerWidth = item.offsetWidth;
+          const imageAspectRatio = img.naturalHeight / img.naturalWidth;
+          const containerHeight = containerWidth * imageAspectRatio;
+          
+          // Set container height to match image
+          item.style.height = `${containerHeight}px`;
+          
+          // Position item
+          const leftPosition = shortestColumnIndex * (100 / columnCount);
+          item.style.left = `${leftPosition}%`;
+          item.style.top = `${columnHeights[shortestColumnIndex]}px`;
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+          
+          // Update column height (container height + gap)
+          columnHeights[shortestColumnIndex] += containerHeight + 20;
+        });
+        
+        // Set container height
+        const maxHeight = Math.max(...columnHeights);
+        grid.style.height = `${maxHeight}px`;
+      }
+      
+      function getColumnCount() {
+        const width = window.innerWidth;
+        if (width <= 480) return 1;
+        if (width <= 768) return 2;
+        return 3;
+      }
+      
+      // Initialize masonry on load and resize
+      window.addEventListener('load', () => {
+        // Small delay to ensure everything is rendered
+        setTimeout(initMasonry, 100);
+      });
+      
+      window.addEventListener('resize', () => {
+        // Debounce resize events
+        clearTimeout(window.resizeTimeout);
+        window.resizeTimeout = setTimeout(initMasonry, 250);
+      });
+
+      // Filter functionality
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterBtns.forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+
+          galleryItems.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+          
+          // Re-initialize masonry after filtering
+          setTimeout(initMasonry, 100);
+        });
+      });
+
+      // Lightbox functionality
+      const galleryImages = document.querySelectorAll('.gallery-item img');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightboxImage');
+
+      galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImage.src = img.src;
+          lightboxImage.alt = img.alt;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+
+      // Close lightbox when clicking outside image
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Load more functionality
+      function loadMoreImages() {
+        alert('This would load more images from your database. Currently showing placeholder content.');
+      }
+
+      // Keyboard navigation for lightbox
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+    </script>
   </body>
 </html>
