@@ -52,6 +52,7 @@
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  border-radius: 6px;
   border-bottom: 8px solid rgb(73, 152, 190);
 }
 
@@ -188,7 +189,7 @@
 .gallery-item {
   aspect-ratio: 4 / 3; /* 4:3 ratio */
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 6px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }

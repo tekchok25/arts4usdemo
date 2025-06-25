@@ -698,9 +698,10 @@ h1 {
   justify-content: space-between;
   align-items: center;
   transition: color 0.3s ease, background-color 0.3s ease;
-  background-color: #f5f5f5;
+  border: 1px solid rgb(117, 92, 173);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 40px 20px;
-  border-radius: 2px;
+  border-radius: 10px;
   margin-bottom: 0px !important;
 }
 
@@ -744,4 +745,5 @@ h1 {
 
 .collapsible-section.open .collapsible-header {
   background-color: #fdfdfd;
+  border: none;
 }
