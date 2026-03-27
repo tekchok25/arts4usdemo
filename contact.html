@@ -12,24 +12,23 @@
   <body>
     <header class="header">
       <nav class="nav-wrapper">
-        <!-- Logo on the left -->
         <a href="index.html" class="logo">
           <img class="logo-img" src="images/logo-colour.png" alt="Arts4us Logo">
         </a>
-        <!-- Navigation links in the center -->
         <div class="nav-right">
           <div class="nav-links">
-            <a href="whats-on.html">What's on</a>
+            <a href="whats-on.html">Services</a>
             <a href="resources.html">Resources</a>
             <a href="blog.html">Blog</a>
             <a href="youthvoice.html">Youth Voice</a>
             <a href="gallery.html">Gallery</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="a-active">Contact</a>
+            <a href="contact.html">Contact</a>
+            <a href="portal.html" id="nav-portal" style="display: none;">My Portal</a>
+            <a href="#" id="nav-logout" style="display: none;" onclick="logoutUser(event)">Log Out</a>
           </div>
-          <!-- Icons on the right -->
-          <div class="nav-icons">
-            <a href="login.html" title="Search">
+          <div class="nav-icons" id="nav-login-icon">
+            <a href="login.html" title="Log In">
               <img class="user-icon" src="icons/user-icon.png">
             </a>
            </div>
@@ -201,5 +200,31 @@
         </div>
       </div>
     </footer>
+    <script>
+      // Navigation Display Logic
+      document.addEventListener('DOMContentLoaded', function() {
+        const isLoggedIn = localStorage.getItem('arts4us_logged_in') === 'true';
+        const navPortal = document.getElementById('nav-portal');
+        const navLogout = document.getElementById('nav-logout');
+        const navLoginIcon = document.getElementById('nav-login-icon');
+
+        if (isLoggedIn) {
+          if(navPortal) navPortal.style.display = 'inline-block';
+          if(navLogout) navLogout.style.display = 'inline-block';
+          if(navLoginIcon) navLoginIcon.style.display = 'none'; // Hide the person icon
+        } else {
+          if(navPortal) navPortal.style.display = 'none';
+          if(navLogout) navLogout.style.display = 'none';
+          if(navLoginIcon) navLoginIcon.style.display = 'flex'; // Show the person icon
+        }
+      });
+
+      // Handle Log Out from top nav
+      function logoutUser(event) {
+        if(event) event.preventDefault();
+        localStorage.removeItem('arts4us_logged_in');
+        window.location.href = 'login.html'; // Redirect to login page
+      }
+    </script>
   </body>
 </html>
