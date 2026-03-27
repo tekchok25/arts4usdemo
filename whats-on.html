@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Arts4Us</title>
+    <title>Arts4Us - Services</title>
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/footer.css">
@@ -9,28 +9,157 @@
     <link rel="stylesheet" href="styles/gallery.css">
     <link rel="stylesheet" href="styles/carousel.css">
     <link rel="stylesheet" href="styles/filter.css">
+    <style>
+      .filter-sidebar {
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+      .filter-sidebar::-webkit-scrollbar { width: 6px; }
+      .filter-sidebar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+      .filter-sidebar::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+      .filter-sidebar::-webkit-scrollbar-thumb:hover { background: #999; }
+
+      .tags-container {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+        align-items: center; 
+      }
+      .event-tag-sub {
+        display: inline-flex;
+        align-items: center;
+        height: 24px; 
+        padding: 0 10px;
+        border-radius: 5px;
+        font-size: 11px;
+        font-weight: 600;
+        box-sizing: border-box;
+      }
+
+      .tag-type { background: #ffc518; color: #333; }
+      .tag-mode { background: #E1F0F8; color: #4998BE; }
+      .tag-cost { background: #E8F5E9; color: #398424; }
+      .tag-cyp { background: #F3E5F5; color: #755CAD; }
+      .tag-gender { background: #FCE4EC; color: #D1477A; }
+
+      .save-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 15px;
+        background-color: transparent;
+        color: #755CAD;
+        border: 2px solid #755CAD;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        width: 100%;
+        text-align: center;
+      }
+      .save-btn:hover {
+        background-color: #f4f0fa;
+      }
+      .save-btn.saved {
+        background-color: #755CAD;
+        color: white;
+      }
+
+      /* --- PASTEL THEME OVERRIDES --- */
+      
+      /* 1. Soft Page Background */
+      body, .filter-page-container {
+        background-color: #FAF8FC; /* A very faint, calming pastel lavender/white */
+      }
+
+      /* 2. Soften the Sidebar */
+      .filter-sidebar {
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+        background: #FFFFFF;
+        border: 2px solid #F3E5F5; /* Soft pastel purple border instead of grey */
+        border-radius: 15px; /* Softer, rounder corners */
+        box-shadow: 0 4px 20px rgba(117, 92, 173, 0.05); /* Faint purple shadow */
+      }
+      .filter-title {
+        border-bottom: 2px solid #F3E5F5; /* Pastel underline */
+        color: #5E4B8A; /* Softer text color */
+      }
+
+      /* Scrollbar styling */
+      .filter-sidebar::-webkit-scrollbar { width: 6px; }
+      .filter-sidebar::-webkit-scrollbar-track { background: #fdfdfd; border-radius: 4px; }
+      .filter-sidebar::-webkit-scrollbar-thumb { background: #D1C4E9; border-radius: 4px; } /* Pastel scrollbar */
+
+      /* 3. Soften the Event Cards */
+      .event-card {
+        border-radius: 15px; /* Rounder corners */
+        border-bottom: 5px solid #E1D5E7; /* Soft pastel purple bottom line */
+        box-shadow: 0 4px 15px rgba(117, 92, 173, 0.04); /* Faint purple shadow */
+        border: 1px solid #FCFAFF;
+      }
+      .event-card:hover {
+        box-shadow: 0 10px 25px rgba(117, 92, 173, 0.12); /* Shadow glows soft purple on hover */
+        border-bottom: 5px solid #D1C4E9; /* Bottom line gets slightly deeper purple on hover */
+        transform: translateY(-5px);
+      }
+
+      /* 4. True Pastel Tags */
+      .tags-container {
+        display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; align-items: center; 
+      }
+      .event-tag-sub {
+        display: inline-flex; align-items: center; height: 24px; padding: 0 10px; 
+        border-radius: 8px; /* Rounder tags */
+        font-size: 11px; font-weight: 700; box-sizing: border-box;
+      }
+      
+      /* Pastel Color Palette for Tags */
+      .tag-type { background: #FFF3E0; color: #E65100; }    /* Pastel Orange/Peach */
+      .tag-mode { background: #E3F2FD; color: #1565C0; }    /* Pastel Blue */
+      .tag-cost { background: #E8F5E9; color: #2E7D32; }    /* Pastel Mint Green */
+      .tag-cyp { background: #F3E5F5; color: #6A1B9A; }     /* Pastel Lavender */
+      .tag-gender { background: #FCE4EC; color: #AD1457; }  /* Pastel Blush Pink */
+
+      /* 5. Soften the Save Button */
+      .save-btn {
+        display: inline-block; padding: 10px 20px; margin-top: 15px;
+        background-color: #F3E5F5; /* Pastel purple background */
+        color: #755CAD;
+        border: none; /* Removed harsh border */
+        border-radius: 8px;
+        font-weight: bold; cursor: pointer; transition: all 0.2s ease;
+        width: 100%; text-align: center;
+      }
+      .save-btn:hover {
+        background-color: #E1D5E7; /* Slightly darker pastel on hover */
+      }
+      .save-btn.saved {
+        background-color: #D1C4E9; /* Muted darker pastel when saved */
+        color: #4A3073;
+      }
+    </style>
   </head>
   <body>
     <header class="header">
       <nav class="nav-wrapper">
-        <!-- Logo on the left -->
         <a href="index.html" class="logo">
           <img class="logo-img" src="images/logo-colour.png" alt="Arts4us Logo">
         </a>
-        <!-- Navigation links in the center -->
         <div class="nav-right">
           <div class="nav-links">
-            <a href="whats-on.html" class="a-active">What's on</a>
+            <a href="whats-on.html">Services</a>
             <a href="resources.html">Resources</a>
             <a href="blog.html">Blog</a>
             <a href="youthvoice.html">Youth Voice</a>
             <a href="gallery.html">Gallery</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
+            <a href="portal.html" id="nav-portal" style="display: none;">My Portal</a>
+            <a href="#" id="nav-logout" style="display: none;" onclick="logoutUser(event)">Log Out</a>
           </div>
-          <!-- Icons on the right -->
-          <div class="nav-icons">
-            <a href="login.html" title="Search">
+          <div class="nav-icons" id="nav-login-icon">
+            <a href="login.html" title="Log In">
               <img class="user-icon" src="icons/user-icon.png">
             </a>
            </div>
@@ -39,130 +168,81 @@
     </header>
 
     <div class="filter-page-container">
-      <!-- Left Sidebar - Filters -->
       <div class="filter-sidebar">
         <div class="filter-section">
-          <h3 class="filter-title">Category</h3>
+          <h3 class="filter-title">Types of arts-based service</h3>
           <div class="filter-options">
-            <div class="filter-option">
-              <input type="checkbox" id="workshop" data-filter="category" value="workshop">
-              <label for="workshop">Workshops</label>
-            </div>
-           <div class="filter-option">
-              <input type="checkbox" id="performance" data-filter="category" value="performance">
-              <label for="performance">Performances</label>
-            </div>
-            <div class="filter-option">
-              <input type="checkbox" id="exhibition" data-filter="category" value="exhibition">
-              <label for="exhibition">Exhibitions</label>
-            </div>
-            <div class="filter-option">
-              <input type="checkbox" id="community" data-filter="category" value="community">
-              <label for="community">Community Events</label>
-            </div>
-            <div class="filter-option">
-              <input type="checkbox" id="online" data-filter="category" value="online">
-              <label for="online">Online Events</label>
-            </div>
+            <div class="filter-option"><input type="checkbox" id="t-dance" data-filter="type" value="Dance"><label for="t-dance">Dance</label></div>
+            <div class="filter-option"><input type="checkbox" id="t-music" data-filter="type" value="Music"><label for="t-music">Music</label></div>
+            <div class="filter-option"><input type="checkbox" id="t-drama" data-filter="type" value="Drama and theatre"><label for="t-drama">Drama and theatre</label></div>
+            <div class="filter-option"><input type="checkbox" id="t-visual" data-filter="type" value="Visual arts"><label for="t-visual">Visual arts</label></div>
+            <div class="filter-option"><input type="checkbox" id="t-writing" data-filter="type" value="Creative writing/poetry"><label for="t-writing">Creative writing/poetry</label></div>
+            <div class="filter-option"><input type="checkbox" id="t-museums" data-filter="type" value="Museums"><label for="t-museums">Museums</label></div>
+            <div class="filter-option"><input type="checkbox" id="t-library" data-filter="type" value="Librarys and literature"><label for="t-library">Librarys and literature</label></div>
+            <div class="filter-option"><input type="checkbox" id="t-heritage" data-filter="type" value="Heritage"><label for="t-heritage">Heritage</label></div>
+            <div class="filter-option"><input type="checkbox" id="t-digital" data-filter="type" value="Digital or media arts"><label for="t-digital">Digital or media arts</label></div>
+            <div class="filter-option"><input type="checkbox" id="t-nature" data-filter="type" value="Outdoors or nature-based arts"><label for="t-nature">Outdoors or nature-based arts</label></div>
+            <div class="filter-option"><input type="checkbox" id="t-therapy" data-filter="type" value="Arts therapies"><label for="t-therapy">Arts therapies</label></div>
+            <div class="filter-option"><input type="checkbox" id="t-other" data-filter="type" value="Other"><label for="t-other">Other</label></div>
           </div>
         </div>
-
         <div class="filter-section">
-          <h3 class="filter-title">Age Group</h3>
+          <h3 class="filter-title">Mode of engagement</h3>
           <div class="filter-options">
-            <div class="filter-option">
-              <input type="checkbox" id="age-9-11" data-filter="age" value="9-11">
-               <label for="age-9-11">9-11 years</label>
-            </div>
-            <div class="filter-option">
-              <input type="checkbox" id="age-12-13" data-filter="age" value="12-13">
-              <label for="age-12-13">12-13 years</label>
-            </div>
-            <div class="filter-option">
-              <input type="checkbox" id="age-family" data-filter="age" value="family">
-              <label for="age-family">Family Friendly</label>
-            </div>
+            <div class="filter-option"><input type="checkbox" id="m-1on1" data-filter="mode" value="1:1 support"><label for="m-1on1">1:1 support</label></div>
+            <div class="filter-option"><input type="checkbox" id="m-group" data-filter="mode" value="Group activity"><label for="m-group">Group activity</label></div>
+            <div class="filter-option"><input type="checkbox" id="m-day" data-filter="mode" value="Day service"><label for="m-day">Day service</label></div>
+            <div class="filter-option"><input type="checkbox" id="m-online" data-filter="mode" value="Online service"><label for="m-online">Online service</label></div>
+            <div class="filter-option"><input type="checkbox" id="m-other" data-filter="mode" value="Other"><label for="m-other">Other</label></div>
           </div>
         </div>
-
         <div class="filter-section">
-          <h3 class="filter-title">Location</h3>
+          <h3 class="filter-title">Cost</h3>
           <div class="filter-options">
-            <div class="filter-option">
-              <input type="checkbox" id="ormskirk" data-filter="location" value="ormskirk">
-              <label for="ormskirk">Ormskirk</label>
-            </div>
-            <div class="filter-option">
-              <input type="checkbox" id="liverpool" data-filter="location" value="liverpool">
-              <label for="liverpool">Liverpool</label>
-            </div>
-            <div class="filter-option">
-              <input type="checkbox" id="manchester" data-filter="location" value="manchester">
-              <label for="manchester">Manchester</label>
-            </div>
-            <div class="filter-option">
-              <input type="checkbox" id="online-loc" data-filter="location" value="online">
-              <label for="online-loc">Online</label>
-            </div>
+            <div class="filter-option"><input type="checkbox" id="c-yes" data-filter="cost" value="Yes"><label for="c-yes">Yes</label></div>
+            <div class="filter-option"><input type="checkbox" id="c-no" data-filter="cost" value="No"><label for="c-no">No</label></div>
           </div>
         </div>
-
         <div class="filter-section">
-          <h3 class="filter-title">Time</h3>
+          <h3 class="filter-title">For children & young people</h3>
           <div class="filter-options">
-            <div class="filter-option">
-              <input type="radio" id="upcoming" name="time" data-filter="time" value="upcoming" checked>
-              <label for="upcoming">Upcoming</label>
-            </div>
-            <div class="filter-option">
-              <input type="radio" id="this-week" name="time" data-filter="time" value="this-week">
-              <label for="this-week">This Week</label>
-            </div>
-            <div class="filter-option">
-              <input type="radio" id="this-month" name="time" data-filter="time" value="this-month">
-              <label for="this-month">This Month</label>
-            </div>
+            <div class="filter-option"><input type="checkbox" id="cyp-yes" data-filter="cyp" value="Yes"><label for="cyp-yes">Yes</label></div>
+            <div class="filter-option"><input type="checkbox" id="cyp-no" data-filter="cyp" value="No"><label for="cyp-no">No</label></div>
           </div>
         </div>
-
+        <div class="filter-section">
+          <h3 class="filter-title">Gender restriction</h3>
+          <div class="filter-options">
+            <div class="filter-option"><input type="checkbox" id="fm-female" data-filter="gender" value="Female only"><label for="fm-female">Female only</label></div>
+            <div class="filter-option"><input type="checkbox" id="fm-male" data-filter="gender" value="Male only"><label for="fm-male">Male only</label></div>
+          </div>
+        </div>
         <button class="clear-filters" onclick="clearAllFilters()">Clear All Filters</button>
       </div>
 
-      <!-- Right Content - Events -->
       <div class="events-content">
         <div class="events-header">
-          <div class="events-count">
-            Showing <span id="event-count">12</span> events
-          </div>
-          <select class="sort-select" id="sort-select" onchange="sortEvents()">
-            <option value="date">Sort by Date</option>
+          <div class="events-count">Showing <span id="event-count">0</span> services</div>
+          <select class="sort-select" id="sort-select">
             <option value="name">Sort by Name</option>
-            <option value="location">Sort by Location</option>
+            <option value="type">Sort by Category</option>
           </select>
         </div>
-
-        <div class="events-grid" id="events-grid">
-        <!-- Event cards will be generated by JavaScript -->
-        </div>
-
+        <div class="events-grid" id="events-grid"></div>
         <div class="no-results" id="no-results" style="display: none;">
-          <h3>No events found</h3>
-          <p>Try adjusting your filters to see more events.</p>
+          <h3>No services found</h3>
+          <p>Try adjusting your filters to see more services.</p>
         </div>
       </div>
     </div>
 
-    <!-- Footer section -->    
     <footer class="footer">
       <div class="footer-wrapper">
         <div class="footer-content">
-          <!-- Logo section -->
           <div class="footer-section">
             <img class="footer-logo" src="images/logo-white.png">
             <p>Working together to scale up place-based arts initiatives that support the mental health of children and young people.</p>
           </div>
-
-          <!-- General section -->
           <div class="footer-section">
             <h3>General</h3>
             <ul>
@@ -174,20 +254,16 @@
               <li><a href="#">Meet the Team</a></li>
             </ul>
           </div>
-
-          <!-- Resources section -->
           <div class="footer-section">
             <h3>Resources</h3>
             <ul>
               <li><a href="resources.html">Resources</a></li>
-              <li><a href="whats-on.html">Activities</a></li>
+              <li><a href="whats-on.html">Services</a></li>
               <li><a href="#">Parents</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li><a href="#">Creative Corner</a></li>
             </ul>
           </div>
-
-          <!-- Contact section -->
           <div class="footer-section">
             <h3>Contact Us</h3>
             <ul>
@@ -203,173 +279,50 @@
     </footer>
 
     <script>
-      // Sample event data - they can be replaced with real data or fetch from an API later
       const eventsData = [
-        {
-          id: 1,
-          title: "Creative Arts Workshop for Young Minds",
-          category: "workshop",
-          age: "9-11",
-          location: "ormskirk",
-          time: "upcoming",
-          date: "2025-06-25",
-          dateText: "Wed 25 June 2025",
-          description: "A hands-on creative workshop designed to boost confidence and self-expression through various art forms.",
-          locationText: "Edge Hill University, Ormskirk",
-          image: "images/gallery-1.jpg"
-        },
-        {
-          id: 2,
-          title: "Youth Theatre Performance",
-          category: "performance",
-          age: "12-13",
-          location: "liverpool",
-          time: "this-week",
-          date: "2025-06-20",
-          dateText: "Fri 20 June 2025",
-          description: "An inspiring theatre performance by young people, exploring themes of mental health and resilience.",
-          locationText: "Liverpool Playhouse",
-          image: "images/gallery-3.jpg"
-        },
-        {
-          id: 3,
-          title: "Digital Art Exhibition: Young Voices",
-          category: "exhibition",
-          age: "family",
-          location: "manchester",
-          time: "this-month",
-          date: "2025-06-30",
-          dateText: "Mon 30 June 2025",
-          description: "A showcase of digital artworks created by children and young people from across the Northwest.",
-          locationText: "Manchester Art Gallery",
-          image: "images/gallery-5.jpg"
-        },
-        {
-          id: 4,
-          title: "Community Music Making Session",
-          category: "community",
-          age: "family",
-          location: "ormskirk",
-          time: "upcoming",
-          date: "2025-07-02",
-          dateText: "Wed 2 July 2025",
-          description: "Come together for a fun music-making session that brings families and communities closer.",
-          locationText: "Ormskirk Community Centre",
-          image: "images/gallery-2.jpg"
-        },
-        {
-          id: 5,
-          title: "Online Creative Writing Workshop",
-          category: "workshop",
-          age: "12-13",
-          location: "online",
-          time: "this-week",
-          date: "2025-06-22",
-          dateText: "Sun 22 June 2025",
-          description: "An interactive online workshop focusing on creative writing as a tool for emotional expression.",
-          locationText: "Online via Zoom",
-          image: "events/event-7.jpg"
-        },
-        {
-          id: 6,
-          title: "Drama Therapy Workshop",
-          category: "workshop",
-          age: "9-11",
-          location: "liverpool",
-          time: "upcoming",
-          date: "2025-07-05",
-          dateText: "Sat 5 July 2025",
-          description: "Explore emotions and build confidence through drama therapy techniques designed for young people.",
-          locationText: "Liverpool Central Library",
-          image: "events/event-2.jpg"
-        },
-        {
-          id: 7,
-          title: "Arts4Us End of Year Celebration",
-          category: "community",
-          age: "family",
-          location: "ormskirk",
-          time: "this-month",
-          date: "2025-06-28",
-          dateText: "Sat 28 June 2025",
-          description: "Join our end of year event at Edge Hill University and celebrate our achievements!",
-          locationText: "Edge Hill University",
-          image: "images/event-1.jpg"
-        },
-        {
-          id: 8,
-          title: "Virtual Reality Art Experience",
-          category: "exhibition",
-          age: "12-13",
-          location: "manchester",
-          time: "upcoming",
-          date: "2025-07-10",
-          dateText: "Thu 10 July 2025",
-          description: "Experience art in a whole new way with our immersive VR art installation.",
-          locationText: "VR Manchester",
-          image: "events/event-8.jpg"
-        },
-        {
-          id: 9,
-          title: "Online Mindful Art Session",
-          category: "workshop",
-          age: "family",
-          location: "online",
-          time: "this-week",
-          date: "2025-06-21",
-          dateText: "Sat 21 June 2025",
-          description: "A relaxing online session combining mindfulness techniques with creative art activities.",
-          locationText: "Online via Teams",
-          image: "events/event-9.jpg"
-        },
-        {
-          id: 10,
-          title: "Youth Dance Performance",
-          category: "performance",
-          age: "12-13",
-          location: "liverpool",
-          time: "upcoming",
-          date: "2025-07-15",
-          dateText: "Tue 15 July 2025",
-          description: "A powerful dance performance exploring themes of identity and belonging by young performers.",
-          locationText: "Liverpool Empire Theatre",
-          image: "events/event-3.jpg"
-        },
-        {
-          id: 11,
-          title: "Family Craft Workshop",
-          category: "workshop",
-          age: "family",
-          location: "manchester",
-          time: "this-month",
-          date: "2025-06-29",
-          dateText: "Sun 29 June 2025",
-          description: "A fun family workshop where parents and children can create beautiful crafts together.",
-          locationText: "Manchester Museum",
-          image: "events/event-1.jpeg"
-        },
-        {
-          id: 12,
-          title: "Interactive Poetry Reading",
-          category: "performance",
-          age: "9-11",
-          location: "ormskirk",
-          time: "upcoming",
-          date: "2025-07-08",
-          dateText: "Tue 8 July 2025",
-          description: "An engaging poetry reading session where young people can share their own creative works.",
-          locationText: "Ormskirk Library",
-          image: "events/event-5.jpg"
-        }
+        { id: 1, title: "Creative Arts Workshop for Young Minds", type: "Visual arts", mode: "Group activity", cost: "No", cyp: "Yes", gender: "No restriction", dateText: "Every Wednesday", locationText: "Edge Hill University, Ormskirk", description: "A hands-on creative workshop designed to boost confidence and self-expression through various art forms.", image: "images/gallery-1.jpg" },
+        { id: 2, title: "Youth Theatre Performance", type: "Drama and theatre", mode: "Group activity", cost: "Yes", cyp: "Yes", gender: "No restriction", dateText: "Fri 20 June 2026", locationText: "Liverpool Playhouse", description: "An inspiring theatre performance by young people, exploring themes of mental health and resilience.", image: "images/gallery-3.jpg" },
+        { id: 3, title: "Digital Art Exhibition: Young Voices", type: "Digital or media arts", mode: "Day service", cost: "No", cyp: "Yes", gender: "No restriction", dateText: "Mon 30 June 2026", locationText: "Manchester Art Gallery", description: "A showcase of digital artworks created by children and young people from across the Northwest.", image: "images/gallery-5.jpg" },
+        { id: 4, title: "Community Music Making Session", type: "Music", mode: "Group activity", cost: "No", cyp: "Yes", gender: "No restriction", dateText: "Wed 2 July 2026", locationText: "Ormskirk Community Centre", description: "Come together for a fun music-making session that brings families and communities closer.", image: "images/gallery-2.jpg" },
+        { id: 5, title: "Online Creative Writing Workshop", type: "Creative writing/poetry", mode: "Online service", cost: "No", cyp: "Yes", gender: "No restriction", dateText: "Every Sunday", locationText: "Online via Zoom", description: "An interactive online workshop focusing on creative writing as a tool for emotional expression.", image: "events/event-7.jpg" },
+        { id: 6, title: "Drama Therapy Workshop", type: "Arts therapies", mode: "Group activity", cost: "Yes", cyp: "Yes", gender: "No restriction", dateText: "Sat 5 July 2026", locationText: "Liverpool Central Library", description: "Explore emotions and build confidence through drama therapy techniques designed for young people.", image: "events/event-2.jpg" },
+        { id: 7, title: "Arts4Us End of Year Celebration", type: "Other", mode: "Group activity", cost: "No", cyp: "Yes", gender: "No restriction", dateText: "Sat 28 June 2026", locationText: "Edge Hill University", description: "Join our end of year event at Edge Hill University and celebrate our achievements!", image: "images/event-1.jpg" },
+        { id: 8, title: "Virtual Reality Art Experience", type: "Digital or media arts", mode: "Day service", cost: "Yes", cyp: "Yes", gender: "No restriction", dateText: "Thu 10 July 2026", locationText: "VR Manchester", description: "Experience art in a whole new way with our immersive VR art installation.", image: "events/event-8.jpg" },
+        { id: 9, title: "Online Mindful Art Session", type: "Arts therapies", mode: "Online service", cost: "No", cyp: "No", gender: "No restriction", dateText: "Sat 21 June 2026", locationText: "Online via Teams", description: "A relaxing online session combining mindfulness techniques with creative art activities.", image: "events/event-9.jpg" },
+        { id: 10, title: "Youth Dance Performance", type: "Dance", mode: "Group activity", cost: "Yes", cyp: "Yes", gender: "No restriction", dateText: "Tue 15 July 2026", locationText: "Liverpool Empire Theatre", description: "A powerful dance performance exploring themes of identity and belonging by young performers.", image: "events/event-3.jpg" },
+        { id: 11, title: "Family Craft Workshop", type: "Visual arts", mode: "Group activity", cost: "No", cyp: "Yes", gender: "No restriction", dateText: "First Sunday of the Month", locationText: "Manchester Museum", description: "A fun family workshop where parents and children can create beautiful crafts together.", image: "events/event-1.jpeg" },
+        { id: 12, title: "Interactive Poetry Reading", type: "Librarys and literature", mode: "Group activity", cost: "No", cyp: "Yes", gender: "No restriction", dateText: "Tue 8 July 2026", locationText: "Ormskirk Library", description: "An engaging poetry reading session where young people can share their own creative works.", image: "events/event-5.jpg" },
+        { id: 13, title: "Demo 1:1 Piano Mentoring", type: "Music", mode: "1:1 support", cost: "Yes", cyp: "Yes", gender: "No restriction", dateText: "By Appointment", locationText: "Lancashire Hub", description: "Personalized music lessons focusing on cognitive development through piano.", image: "events/event-4.jpg" },
+        { id: 14, title: "Demo Outdoor Sketching", type: "Outdoors or nature-based arts", mode: "Group activity", cost: "No", cyp: "Yes", gender: "No restriction", dateText: "Every Saturday Morning", locationText: "Ormskirk Park", description: "Connecting with nature through guided outdoor sketching sessions.", image: "events/event-6.jpg" },
+        { id: 15, title: "Demo Girls' Empowerment Choir", type: "Music", mode: "Group activity", cost: "No", cyp: "Yes", gender: "Female only", dateText: "Every Thursday", locationText: "St Helens Road Studio", description: "A safe, supportive vocal group explicitly dedicated to young women.", image: "images/gallery-4.jpg" },
+        { id: 16, title: "Demo Local Heritage Walk", type: "Heritage", mode: "Day service", cost: "No", cyp: "No", gender: "No restriction", dateText: "Oct 20, 2026", locationText: "Liverpool Docks", description: "Exploring the intersection of local history and community storytelling.", image: "events/event-10.jpg" },
+        { id: 17, title: "Demo Museum Art Curation", type: "Museums", mode: "Group activity", cost: "Yes", cyp: "Yes", gender: "No restriction", dateText: "Nov 5, 2026", locationText: "Manchester History Museum", description: "Learn how to curate and display artwork inside a real museum setting.", image: "events/event-11.jpg" },
+        { id: 18, title: "Demo Men's Art Therapy Group", type: "Arts therapies", mode: "Online service", cost: "Yes", cyp: "No", gender: "Male only", dateText: "Every Monday Evening", locationText: "Online via Zoom", description: "Professional therapeutic support delivered securely for men.", image: "events/event-12.jpg" }
       ];
 
-      let filteredEvents = [...eventsData];
-      let currentSort = 'date';
+      function getSavedEvents() {
+        return JSON.parse(localStorage.getItem('arts4us_saved')) || [];
+      }
+
+      window.toggleSave = function(eventId, btnElement) {
+        let saved = getSavedEvents();
+        if (saved.includes(eventId)) {
+          saved = saved.filter(id => id !== eventId);
+          btnElement.textContent = 'Save Service';
+          btnElement.classList.remove('saved');
+        } else {
+          saved.push(eventId);
+          btnElement.textContent = 'Saved ♥';
+          btnElement.classList.add('saved');
+        }
+        localStorage.setItem('arts4us_saved', JSON.stringify(saved));
+      };
 
       function renderEvents() {
         const eventsGrid = document.getElementById('events-grid');
         const eventCount = document.getElementById('event-count');
         const noResults = document.getElementById('no-results');
+        const savedEvents = getSavedEvents();
 
         if (filteredEvents.length === 0) {
           eventsGrid.style.display = 'none';
@@ -382,107 +335,94 @@
         noResults.style.display = 'none';
         eventCount.textContent = filteredEvents.length;
 
-        eventsGrid.innerHTML = filteredEvents.map(event => `
+        eventsGrid.innerHTML = filteredEvents.map(event => {
+          const isSaved = savedEvents.includes(event.id);
+          return `
           <div class="event-card" data-id="${event.id}">
             <div class="event-image">
-              <img src="${event.image}" alt="${event.title}">
+              <img src="${event.image}" alt="${event.title}" style="object-fit: cover; background-color: #f0f0f0;" onerror="this.src='images/logo-colour.png'; this.style.objectFit='contain'; this.style.padding='20px';">
             </div>
             <div class="event-details">
-              <span class="event-category">${event.category}</span>
+              <div class="tags-container">
+                <span class="event-tag-sub tag-type">${event.type}</span>
+                <span class="event-tag-sub tag-mode">${event.mode}</span>
+                <span class="event-tag-sub tag-cost">${event.cost === 'No' ? 'Free' : 'Paid'}</span>
+                ${event.cyp === 'Yes' ? `<span class="event-tag-sub tag-cyp">Youth Focused</span>` : ''}
+                ${event.gender !== 'No restriction' ? `<span class="event-tag-sub tag-gender">${event.gender}</span>` : ''}
+              </div>
               <div class="event-date">${event.dateText}</div>
               <h3 class="event-title">${event.title}</h3>
               <p class="event-description">${event.description}</p>
               <div class="event-location">${event.locationText}</div>
+              
+              <button class="save-btn ${isSaved ? 'saved' : ''}" onclick="toggleSave(${event.id}, this)">
+                ${isSaved ? 'Saved ♥' : 'Save Service'}
+              </button>
             </div>
           </div>
-        `).join('');
+        `}).join('');
       }
 
       function filterEvents() {
-        const activeFilters = {
-          category: [],
-          age: [],
-          location: [],
-          time: []
-        };
-
-        // Get all checked filters
-        document.querySelectorAll('input[data-filter]:checked').forEach(input => {
-            const filterType = input.getAttribute('data-filter');
-            activeFilters[filterType].push(input.value);
+        const activeFilters = { type: [], mode: [], cost: [], cyp: [], gender: [] };
+        document.querySelectorAll('input[type="checkbox"]:checked').forEach(input => {
+            activeFilters[input.getAttribute('data-filter')].push(input.value);
         });
-
         filteredEvents = eventsData.filter(event => {
-          // Check category filter
-          if (activeFilters.category.length > 0 && !activeFilters.category.includes(event.category)) {
-            return false;
-          }
-
-          // Check age filter
-          if (activeFilters.age.length > 0 && !activeFilters.age.includes(event.age)) {
-            return false;
-          }
-
-          // Check location filter
-          if (activeFilters.location.length > 0 && !activeFilters.location.includes(event.location)) {
-            return false;
-          }
-
-          // Check time filter
-          if (activeFilters.time.length > 0 && !activeFilters.time.includes(event.time)) {
-            return false;
-          }
-
+          if (activeFilters.type.length > 0 && !activeFilters.type.includes(event.type)) return false;
+          if (activeFilters.mode.length > 0 && !activeFilters.mode.includes(event.mode)) return false;
+          if (activeFilters.cost.length > 0 && !activeFilters.cost.includes(event.cost)) return false;
+          if (activeFilters.cyp.length > 0 && !activeFilters.cyp.includes(event.cyp)) return false;
+          if (activeFilters.gender.length > 0 && !activeFilters.gender.includes(event.gender)) return false;
           return true;
         });
-
         sortEvents(currentSort);
-        renderEvents();
       }
 
-      function sortEvents(sortBy = null) {
+      let currentSort = 'name';
+      function sortEvents(sortBy) {
         if (sortBy) currentSort = sortBy;
-        
-        filteredEvents.sort((a, b) => {
-          switch (currentSort) {
-            case 'name':
-              return a.title.localeCompare(b.title);
-            case 'location':
-              return a.locationText.localeCompare(b.locationText);
-            case 'date':
-            default:
-              return new Date(a.date) - new Date(b.date);
-          }
-        });
+        filteredEvents.sort((a, b) => currentSort === 'type' ? a.type.localeCompare(b.type) : a.title.localeCompare(b.title));
+        renderEvents();
       }
 
       function clearAllFilters() {
-        document.querySelectorAll('input[data-filter]').forEach(input => {
-          if (input.type === 'radio' && input.value === 'upcoming') {
-            input.checked = true;
-          } else {
-            input.checked = false;
-          }
-        });
+        document.querySelectorAll('input[type="checkbox"]').forEach(i => i.checked = false);
+        document.getElementById('sort-select').value = 'name';
+        currentSort = 'name';
         filterEvents();
       }
 
-      // Event listeners
       document.addEventListener('DOMContentLoaded', function() {
-        // Add event listeners to all filter inputs
-        document.querySelectorAll('input[data-filter]').forEach(input => {
-          input.addEventListener('change', filterEvents);
-        });
-
-        // Add event listener to sort select
-        document.getElementById('sort-select').addEventListener('change', function() {
-          sortEvents(this.value);
-          renderEvents();
-        });
-
-        // Initial render
-        renderEvents();
+        document.querySelectorAll('input[type="checkbox"]').forEach(i => i.addEventListener('change', filterEvents));
+        document.getElementById('sort-select').addEventListener('change', e => sortEvents(e.target.value));
+        filterEvents();
       });
+
+      // Navigation Display Logic
+      document.addEventListener('DOMContentLoaded', function() {
+        const isLoggedIn = localStorage.getItem('arts4us_logged_in') === 'true';
+        const navPortal = document.getElementById('nav-portal');
+        const navLogout = document.getElementById('nav-logout');
+        const navLoginIcon = document.getElementById('nav-login-icon');
+
+        if (isLoggedIn) {
+          if(navPortal) navPortal.style.display = 'inline-block';
+          if(navLogout) navLogout.style.display = 'inline-block';
+          if(navLoginIcon) navLoginIcon.style.display = 'none'; // Hide the person icon
+        } else {
+          if(navPortal) navPortal.style.display = 'none';
+          if(navLogout) navLogout.style.display = 'none';
+          if(navLoginIcon) navLoginIcon.style.display = 'flex'; // Show the person icon
+        }
+      });
+
+      // Handle Log Out from top nav
+      function logoutUser(event) {
+        if(event) event.preventDefault();
+        localStorage.removeItem('arts4us_logged_in');
+        window.location.href = 'login.html'; // Redirect to login page
+      }
     </script>
   </body>
 </html>
